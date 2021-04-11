@@ -14,8 +14,8 @@ class Array{
      void readArr();
      void displayArr();
      void traverseBackward();
-     void insert(int loc,int el);
-     void del(int loc);
+     void insert();
+     void del();
      
 };
 void Array::readArr(){
@@ -50,7 +50,13 @@ void Array::traverseBackward(){
         cout<<arr[i];
     }
 }
-void Array::insert(int loc,int el){
+void Array::insert(){
+    int loc,el;
+
+    cout<<"Enter the pos to insert";
+    cin>>loc;
+    cout<<"Enter the element to insert";
+    cin>>el;
     for(int i=size+1;i>loc;i--){
         arr[i]=arr[i-1];
 
@@ -60,11 +66,24 @@ void Array::insert(int loc,int el){
     cout<<el<<" inserted at pos "<<loc<<"\n";
 
 }
+void Array::del(){
+    int pos;
+    cout<<"Enter the pos of element to del";
+    cin>>pos;
+    for(int i=pos;i<size-1;i++){
+        arr[i]=arr[i+1];
+    }
+    size--;
+    cout<<"Element deleted \n";
+}
+
 int main(){
     Array a;
     a.readArr();
     a.displayArr();
-    a.insert(2,5);
+    a.insert();
+    a.displayArr();
+    a.del();
     a.displayArr();
     return 0;
 }
