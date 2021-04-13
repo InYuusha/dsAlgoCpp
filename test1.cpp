@@ -1,9 +1,8 @@
 #include <iostream>
 using namespace std;
 int main(){
-    char str[]="HEllo";
-    char word[40];
-    word[]=str;
-    
+    int l = 51%50;
+    cout<<l;
+
     return 0;
 }
