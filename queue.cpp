@@ -9,13 +9,14 @@ class Queue{
     public:
      Queue(){
          max=50;size=0;
-         front,rear=-1;
+         front=0;rear=-1;
      }
      int isFull();
      int empty();
      void add(int el);
      int del();
-     int getFront();
+     void display();
+     int getSize();
 };
 int Queue::empty(){
     if(front==rear){
@@ -44,13 +45,23 @@ int Queue::del(){
     }
     else return -1;
 }
-int Queue::getFront(){
+
+void Queue::display(){
 
 if(!empty()){
-    return queue[front+1];
+    cout<<"\n";
+    for(int i=front;i<=rear;i++){
+        if(queue[i+1]!='\0'){
+        cout<<queue[i]<<"-->";
+        }
+        else cout<<queue[i];
+    }
 }
-else return -1;
 }
+int Queue::getSize(){
+    return size;
+}
+
 
 int main(){
     
@@ -58,6 +69,16 @@ int main(){
     que.add(2);
     que.add(7);
     que.add(5);
+    que.display();
+    int s=que.getSize();
+    cout<<"\n Size is "<<s;
+    int el=que.del();
+    cout<<"\nQueue after deletion \t";
+   que.display();
+   que.add(11);
+   que.display();
+   que.del();
+   que.display();
 
     return 0;
 }
