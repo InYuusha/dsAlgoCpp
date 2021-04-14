@@ -1,2 +1,3 @@
 
-    que.del();
+return 0; 
+}
