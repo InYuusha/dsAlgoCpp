@@ -25,10 +25,8 @@ class dList{
      void traverse();
      void delNode(int val);
      void delAtPos(int pos);
-     void insertBefore(int val);
-     void insertAfter(int val);
-
-
+     void insertPos(dNode *newNode,int pos);
+     
 };
 dNode *dList::getNode(){
     dNode *newNode;
@@ -147,9 +145,45 @@ void dList::delAtPos(int pos){
           cout<<"Position Not found ";
       }
       
-    
   }
  
+}
+void dList::insertPos(dNode*newNode,int pos){
+   dNode *tmp; int count=1;
+   tmp=head;
+   if(head==NULL){
+       head=tail=newNode;
+   }
+   else {
+       if(pos==1){
+           head->prev=newNode;
+           newNode->next=head;
+           head=newNode;
+       }
+       else{
+           while(count!=pos){
+               tmp=tmp->next;
+               if(tmp!=NULL){
+                   count++;
+               }
+               else{
+                   break;
+               }
+           }
+           if(tmp==tail){
+               tail->next=newNode;
+               newNode->prev=tail;
+               tail=newNode;
+           }
+           else{
+               (tmp->prev)->next=newNode;
+               newNode->prev=tmp->prev;
+
+               newNode->next=tmp;
+               tmp->prev=newNode;
+           }
+       }
+   }
 }
 int main(){
     dList li;
@@ -157,6 +191,7 @@ int main(){
     li.traverse();
     li.delAtPos(1);
     li.traverse();
+    
 
     return 0;
 }
