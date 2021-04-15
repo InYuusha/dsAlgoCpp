@@ -29,6 +29,7 @@ class dList{
      
 };
 dNode *dList::getNode(){
+
     dNode *newNode;
     newNode= new dNode;
     cout<<"Enter data ";
@@ -37,6 +38,7 @@ dNode *dList::getNode(){
     return (newNode);
 }
 void dList::append(dNode *newNode){
+    //list is mt
     if(head==NULL){
         head=newNode;
         tail=newNode;
@@ -49,7 +51,7 @@ void dList::append(dNode *newNode){
 }
 void dList::create(){
     char ans; dNode *newNode;
-
+  
     while(1){
          cout<<"Any More nodes to be created ?";
          cin>>ans;
@@ -89,13 +91,17 @@ void dList::delNode(int val){
             delete curr; 
         }
         else {
+            // if tail to be del
             if(curr==tail){
-
+                //make the prev of tail
+                //the new tail
                 tail=curr->prev;
                 tail->next=NULL;
                 delete curr;
             }
             else{
+                //connect the right and left
+                //nodes of tmp & del tmp
                 (curr->prev)->next=curr->next;
                 (curr->next)->prev=curr->prev;
 
@@ -113,6 +119,7 @@ void dList::delNode(int val){
 void dList::delAtPos(int pos){
   dNode *tmp; int count=1;
   tmp=head;
+  //del head
   if(pos==1){
       head=head->next;
       head->prev=NULL;
@@ -120,6 +127,7 @@ void dList::delAtPos(int pos){
       delete tmp;
   }
   else{
+      //traverse till pos
       while(count!=pos){
           tmp=tmp->next;
           if(tmp!=NULL){
@@ -130,12 +138,16 @@ void dList::delAtPos(int pos){
           }
       }
       if(count==pos){
+          //if tail to be del
           if(tmp==tail){
+              //make the prev of tail the new tail
               tail=tail->prev;
               tail->next=NULL;
               delete tmp;
           }
           else{
+              //connect the right and left
+              //nodes of tmp & del tmp
           (tmp->prev)->next=tmp->next;
           (tmp->next)->prev=tmp->prev;
           delete tmp;
@@ -151,17 +163,21 @@ void dList::delAtPos(int pos){
 void dList::insertPos(dNode*newNode,int pos){
    dNode *tmp; int count=1;
    tmp=head;
+   //if list is empty
    if(head==NULL){
        head=tail=newNode;
    }
    else {
+       //add node before head
        if(pos==1){
            head->prev=newNode;
            newNode->next=head;
            head=newNode;
        }
        else{
+           //go till the pos
            while(count!=pos){
+               //traverse
                tmp=tmp->next;
                if(tmp!=NULL){
                    count++;
@@ -170,22 +186,33 @@ void dList::insertPos(dNode*newNode,int pos){
                    break;
                }
            }
-           if(tmp==tail){
+           if(tmp!=NULL){
+               if(tmp==tail){
                tail->next=newNode;
                newNode->prev=tail;
                tail=newNode;
            }
            else{
+               //newNode to be placed between tmp & tmp->prev
+
+               //prev of tmp will be prev of newNode
                (tmp->prev)->next=newNode;
                newNode->prev=tmp->prev;
 
+               //tmp next to newNode & newNode prev to tmp;
                newNode->next=tmp;
                tmp->prev=newNode;
            }
+         }
+         else{
+             cout<<"Position Not found " ;
+         }
        }
    }
 }
 int main(){
+    
+    //object
     dList li;
     li.create();
     li.traverse();
