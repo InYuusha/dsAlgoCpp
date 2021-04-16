@@ -2,16 +2,12 @@
 using namespace std;
 
 int main(){
+    char arr[6]="Hell\0";
+    for(int i=0;i<5;i++){
+        cout<<arr[i];
+    }
 
-    int *num;
-    num=new int(20);
-    cout<<num<<"\n";
-    cout<<*num<<"\n";
 
-    delete num;
-
-    cout<<*num<<"\n";
-  
 
     return 0;
 }
