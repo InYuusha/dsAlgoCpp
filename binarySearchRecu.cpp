@@ -20,12 +20,12 @@ int binarySearch(int arr[],int low,int high,int key){
         }
        
     }
-    else return -1 ;
-    
+    return -1 ;
+   
 }
 int main(){
     int arr[5]={2,5,7,9,11};
-    int res = binarySearch(arr,0,4,5);
+    int res = binarySearch(arr,0,4,7);
     cout<<res;
     return 0;
 
