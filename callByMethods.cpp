@@ -2,7 +2,7 @@
 using namespace std;
 
 // Call by value
-/*  void swap(int x, int y){
+  void swap(int x, int y){
 
     int temp;
     temp =x;
@@ -21,10 +21,10 @@ int main(){
 
     return 0;
 }
-*/
+
 
 //Call By Reference using pointer
-
+/*
  void swap(int *x, int *y){
 
     int temp;
@@ -41,9 +41,10 @@ int main(){
 
     cout << "A and B before Swap \t" << a <<b << "\n";
 
-    swap(a,b);
+    swap(&a,&b);
 
     cout << "A and B After Swap \t" << a << b << "\n";
 
     return 0;
 }
+*/
