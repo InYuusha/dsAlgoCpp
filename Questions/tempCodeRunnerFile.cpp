@@ -1,0 +1,2 @@
+
+        mp[arr[i]] = true;
