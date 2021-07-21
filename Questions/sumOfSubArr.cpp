@@ -26,5 +26,6 @@ int main(){
     auto out = subArr(arr, 8, n);
     for (auto it = out.begin(); it != out.end();it++){
         cout << it->first << " " << it->second << "\n";
+        
     }
 }

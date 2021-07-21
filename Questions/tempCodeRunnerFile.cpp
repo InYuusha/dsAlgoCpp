@@ -1,2 +1,2 @@
 
-        mp[arr[i]] = true;
+        }
