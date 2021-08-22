@@ -27,6 +27,7 @@ class lList{
      void create();
      void display();
      Node *getNode();
+     void sort();
      void append(Node *newNode);
      void insertAtPos(Node *newNode , int pos);
      void traverse(){
@@ -119,13 +120,32 @@ void lList::deleteNode(int pos){
   }
 
 }
+void lList::sort(){
+    Node* tmp, *index;
+    tmp = head;  index = tmp->link;
+    while(tmp->link!=NULL){
+        index = tmp->link;
+       
+        while(index!=NULL){
+            if(tmp->data>index->data){
+                int val = tmp->data;
+                tmp->data=index->data;
+                index->data = val;
+            }
+            index=index->link;
+        }
+        tmp=tmp->link;
+
+    }
+}
 
 int main(){
 lList li;
 li.create();
 li.display();
-
-
+li.sort();
+cout<<"\n";
+li.display();
 return 0; 
 
 }
