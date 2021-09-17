@@ -53,10 +53,17 @@ void mergeSort(int arr[],int l,int r){
 }
 
 int main(){
-    int arr[6]={4,2,1,3,5,6};
-    mergeSort(arr,0,5);
-    for(int i=0;i<6;i++){
-        cout<<arr[i]<<" ";
+    int arr[]={5,2,1,8,6};
+    int n= sizeof(arr)/sizeof(arr[0]);
+    
+    cout<<"Before Sort ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i];
     }
-    return 0;
+    mergeSort(arr,0,n-1);
+    
+     cout<<"\nAfter Sort ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i];
+    }
 }

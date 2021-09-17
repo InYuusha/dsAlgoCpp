@@ -16,7 +16,7 @@ void insertionSort(int arr[],int n){
     }
 }
 int main(){
-    int arr[]={2,4,1,5,3,7};
+    int arr[]={5,2,1,8,6};
     cout<<"Before Sort\n";
     for(int i=0;i<6;i++){
         cout<<"\t"<<arr[i];
