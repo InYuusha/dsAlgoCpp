@@ -1,20 +1,22 @@
 #include <iostream>
+#include<string>
 using namespace std;
 
-class foo {
-    int a,b;
-    public:
-    void input();
-    
-};
-void foo::input(){
-    cout<<"Enter the values of a and b ";
-    cin>>a>>b;
+/*int main(){
 
+    int *ptr;
+    *ptr=10;
+
+    cout<<*ptr;
 }
+*/
+/*int main(){
+    string s1="Hello";
+    for(char x:s1)
+        cout<<x;
+ 
+}
+*/
 int main(){
-    foo p;
-    p.input();
-    cout<<p.a;
-     return 0;
+    if()
 }

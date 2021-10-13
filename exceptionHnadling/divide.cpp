@@ -1,3 +1,5 @@
+
+
 #include<iostream>
 using namespace std;
 
@@ -25,3 +27,10 @@ int main(){
     cout<<"Result is "<<res; //if !err
 
 }
+
+
+
+
+
+
+

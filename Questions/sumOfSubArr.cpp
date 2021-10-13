@@ -21,7 +21,7 @@ vector<pair<int,int>> subArr(int arr[],int S,int n){
     return out;
 }
 int main(){
-    int arr[] = {1, 2, 4, 6, -3, 5, 1};
+    int arr[] = {1, 2, 4, 6, -3, 5, 1,7};
     int n = sizeof(arr) / sizeof(arr[0]);
     auto out = subArr(arr, 8, n);
     for (auto it = out.begin(); it != out.end();it++){
