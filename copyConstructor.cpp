@@ -27,12 +27,12 @@ int main(){
     foo a(100);
     foo b(a);
 
-    a.display();
-    b.display();
+   // a.display();
+    //b.display();
 
     foo d;
-    d = a;
-    a.display();
+    d = a; //copy constructor is called
+    d.display();
 
     return 0;
 }
