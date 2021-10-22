@@ -16,13 +16,28 @@ using namespace std;
     }
     return -1;
 } */
-unordered_map<int, bool> mp;
+/*unordered_map<int, bool> mp;
 int duplicateEl(int arr[], int n)
 {
     for (int i = 0; i < n;i++){
         if(mp[arr[i]]==true)
             return arr[i];
         mp[arr[i]] = true;
+    }
+    return -1;
+}
+
+
+
+
+*/
+int duplicateEl(int arr[],int n){
+    unordered_map<int,bool>mp;
+    for(int i=0;i<n;i++){
+        if(mp[arr[i]]==true){
+            return arr[i];
+        }
+        mp[arr[i]]=true;
     }
     return -1;
 }
