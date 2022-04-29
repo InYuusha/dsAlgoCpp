@@ -19,11 +19,11 @@ vector<pair<int,int>> subArr(int arr[],int S,int n){
         }
     }
     return out;
-}
+}                              
 int main(){
-    int arr[] = {1, 2, 4, 6, -3, 5, 1,7};
+    int  arr[] = { 4, 2, -3, -1, 0, 4 };
     int n = sizeof(arr) / sizeof(arr[0]);
-    auto out = subArr(arr, 8, n);
+    auto out = subArr(arr, -2, n);
     for (auto it = out.begin(); it != out.end();it++){
         cout << it->first << " " << it->second << "\n";
         

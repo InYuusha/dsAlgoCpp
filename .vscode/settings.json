@@ -1,8 +1,10 @@
 {
     "files.associations": {
+        "*.asm": "assembly",
         "*.py": "python",
         "*.html": "html",
         "iostream": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "vector": "cpp"
     }
 }

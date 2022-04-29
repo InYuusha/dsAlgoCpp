@@ -27,7 +27,7 @@ vector<pair<int,int>> sum(int arr[],int n){
     return subArr;
 }
  int main(){
-     int  v[] = {2,4,4,14,3,1,-6,5,1,4,4,5};
+     int  v[] = { 4, 2, -3, -1, 0, 4 };
      vector <pair<int,int> > vc  = sum(v, 7);
 
      for (auto it = vc.begin(); it != vc.end();it++){

@@ -123,19 +123,25 @@ void lList::deleteNode(int pos){
 
 }
 void lList::removeDuplicate(){
-   /* unordered_map <int ,bool> mp;
-    Node * tmp =head;
-    int pos=1;
+
+    unordered_set<int>st;
+
+    Node*tmp =head;
+    Node*prev = NULL;
+
     while(tmp!=NULL){
-        if(mp[tmp->data]==true){
-            deleteNode(pos);//function not working
+        //if node value exists
+        if(st.find(tmp->data)!=st.end()){
+            prev->link=tmp->link;
+            delete(tmp);
         }
-        mp[tmp->data]=true;
-        tmp=tmp->link;
-        pos++;
+        else{
+            st.insert(tmp->data);
+            prev=tmp;
+        }
+        tmp=prev->link;
 
     }
-    */
   
 }
 

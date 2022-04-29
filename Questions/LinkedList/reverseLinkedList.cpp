@@ -37,7 +37,7 @@ void lList::display(){
         tmp=tmp->next;
     }
 }
-void lList::reverse(){
+/*void lList::reverse(){
  
     Node*current=head,*prev=NULL,*next=head;
     
@@ -48,6 +48,22 @@ void lList::reverse(){
         prev=current;
         current=next;
 
+    }
+    head=prev;
+}
+*/
+
+void lList::reverse(){
+
+    Node*current=head,*prev=NULL,*next=NULL;
+
+    while(current!=NULL){
+
+        next = current->next;
+        current->next=prev;
+
+        prev=current;
+        current=next;
     }
     head=prev;
 }
